@@ -1,0 +1,296 @@
+::-webkit-scrollbar {
+	width: 5px;
+}
+
+::-webkit-scrollbar-button {
+	background: #fff;
+	height: 20px;
+}
+
+::-webkit-scrollbar-track-piece {
+	background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #e81322;
+}
+
+html, body {
+	height: 100%;
+	overflow-x: hidden;
+}
+
+.homePage {
+	background-color: #000;
+	font-family: AudioWide ,fantasy, sans-serif, arial;
+}
+
+.homePage .navbar {
+	z-index: 999;
+	background: #000;
+	position: fixed;
+	width: 100%;
+	height: 65px;
+	border-bottom: solid 3px;
+	border-image-source: linear-gradient(90deg, #000 25%, #ff0000 50%, #000 75%);
+	border-image-slice: 20;
+	border-image-repeat: stretch;
+}
+
+.homePage .navbar .logo {
+	position: absolute;
+	left: 50px;
+	width: 300px;
+	height: 65px;
+	cursor: pointer;
+}
+
+.homePage .navbar .logo img {
+	height: 60px;
+	padding: 5px;
+}
+
+.homePage .navbar .blockategories {
+	position: absolute;
+	right: 85px;
+}
+
+.homePage .navbar .blockategories .categories {
+	float: left;
+	line-height: 85px;
+	height: 60px;
+	width: 120px;
+	padding: 0px 5px 0px 5px;
+	text-align: center;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 14px;
+	cursor: default;
+	letter-spacing: 0.4px;
+}
+
+.homePage .navbar .blockategories .categories p {
+	margin: 0;
+	height: 60px;
+}
+
+.homePage .navbar .blockategories .categories:hover {
+	cursor: pointer;
+	color: #fff;
+	background: linear-gradient(#000, #ff0000);
+}
+
+.homePage .globalArea {
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	margin-left: -50%;
+	left: 50%;
+	background-position: center;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.homePage .globalArea .slider {
+	margin-top: 85px;
+	width: 100%;
+	height: 435px;
+	border-bottom: solid 3px;
+	border-image-source: linear-gradient(90deg, #000 25%, #ff0000 50%, #000 75%);
+	border-image-slice: 20;
+	border-image-repeat: stretch;
+}
+
+.homePage .globalArea .slider .slide {
+	width: 700px;
+	height: 400px;
+	position: absolute;
+	margin-left: -350px;
+	left: 50%;
+}
+
+.homePage .globalArea .slider .slide .sliderImage {
+	background-color: #fff;
+	height: 400px;
+	margin: auto;
+}
+
+.homePage .globalArea .slider .slide .carousel-indicators .active {
+	background-color: #ff0000;
+}
+
+.homePage .globalArea .slider .slide .carousel-control0 span.glyphicon {
+	color: #ff0000;
+	-webkit-text-stroke: 1px #fff;
+}
+
+.homePage .globalArea .slider .carousel-caption {
+	color: #ff0000;
+	text-transform: uppercase;
+	font-size: 40px;
+	letter-spacing: 0.4px;
+	-webkit-text-stroke: 1px #fff;
+}
+
+.homePage .globalArea .more {
+	margin-top: 15px;
+	width: 100%;
+	height: 165px;
+	border-bottom: solid 3px;
+	border-image-source: linear-gradient(90deg, #000 25%, #ff0000 50%, #000 75%);
+	border-image-slice: 20;
+	border-image-repeat: stretch;
+}
+
+.homePage .globalArea .more .items {
+	position: absolute;
+	left: 50%;
+	margin-left: -350px;
+	margin-top: 20px;
+	width: 700px;
+	height: 150px;
+}
+
+.homePage .globalArea .more .items .item {
+	width: 160px;
+	height: 160px;
+	border-radius: 50%;
+	float: left;
+	margin: 0px 35px 0px 35px;
+	text-align: center;
+	color: #fff;
+	cursor: pointer;
+}
+
+.homePage .globalArea .more .items .item span {
+	font-size: 50px;
+}
+
+.homePage .globalArea .more .items .item p {
+	font-size: 20px;
+	margin-top: 10px;
+}
+
+.homePage .globalArea .more .items .item:hover {
+	color: #ff0000;
+}
+
+.homePage .globalArea .more .itemContents {
+	overflow-y: scroll;
+	display: none;
+	border: solid 1px #ff0000;
+	background-color: #000;
+	width: 800px;
+	height: 600px;
+	position: fixed;
+	z-index: 9999;
+	left: 50%;
+	top: -550px;
+	margin-left: -400px;
+}
+
+.homePage .globalArea .more .itemContents .itemContent {
+	padding: 0px 25px;
+	color: #ff0000;
+	display: none;
+}
+
+.homePage .globalArea .more .itemContents .itemContent h3 {
+	color: #fff;
+}
+
+.homePage .globalArea .more .itemContents .itemContent .exit {
+	cursor: pointer;
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	padding: 1px;
+	width: 25px;
+	height: 25px;
+	text-align: center;
+}
+
+.homePage .globalArea .mePage {
+	color: #fff;
+	margin-top: 15px;
+	width: 100%;
+	height: auto;
+	border-bottom: solid 3px;
+	border-image-source: linear-gradient(90deg, #000 25%, #ff0000 50%, #000 75%);
+	border-image-slice: 20;
+	border-image-repeat: stretch;
+	padding: 35px 0px;
+}
+
+.homePage .globalArea .mePage .content {
+	position: relative;
+	left: 50%;
+	margin-left: -350px;
+	margin-top: 20px;
+	width: 700px;
+	height: auto;
+}
+
+.homePage .globalArea .galleryPage {
+	color: #fff;
+	margin-top: 15px;
+	width: 100%;
+	height: auto;
+	border-bottom: solid 3px;
+	border-image-source: linear-gradient(90deg, #000 25%, #ff0000 50%, #000 75%);
+	border-image-slice: 20;
+	border-image-repeat: stretch;
+	padding: 35px 0px;
+}
+
+.homePage .globalArea .galleryPage .content {
+	position: relative;
+	left: 50%;
+	margin-left: -350px;
+	margin-top: 20px;
+	width: 700px;
+	height: auto;
+}
+
+.homePage .globalArea .galleryPage .content .container {
+	width: 100%;
+}
+
+.homePage .globalArea .galleryPage .content .container #slider-thumbs img {
+	cursor: pointer;
+}
+
+.homePage .globalArea .galleryPage .content .container #sliderScreen {
+	cursor: pointer;
+}
+
+.homePage .globalArea .contactPage {
+	color: #fff;
+	margin-top: 15px;
+	width: 100%;
+	height: auto;
+	border-bottom: solid 3px;
+	border-image-source: linear-gradient(90deg, #000 25%, #ff0000 50%, #000 75%);
+	border-image-slice: 20;
+	border-image-repeat: stretch;
+	padding: 35px 0px;
+}
+
+.homePage .globalArea .contactPage .content {
+	position: relative;
+	left: 50%;
+	margin-left: -350px;
+	margin-top: 20px;
+	width: 700px;
+	height: auto;
+}
+
+.homePage .globalArea .contactPage .content table tr, .homePage .globalArea .contactPage .content table td {
+	padding: 0;
+	width: 130px;
+	height: 36px;
+	letter-spacing: 2px;
+	font-size: 14px;
+}

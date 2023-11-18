@@ -1,0 +1,148 @@
+html, body {
+  font-family: Helvetica;
+  height: 100%;
+  width: 100%; }
+
+#line {
+  height: 4%; }
+
+#line2 {
+  height: 0.2vw;
+  background: #161616; }
+
+#navbar {
+  background-color: #D5D5D5;
+  height: 8%;
+  line-height: 4vw;
+  font-size: large;
+  padding: 0px 20px 0px 20px; }
+  #navbar div {
+    height: 100%; }
+  #navbar .item {
+    text-align: center; }
+  #navbar .item:hover {
+    background-color: #B2B2B2;
+    cursor: pointer;
+    border-bottom: solid 3px #898989; }
+  #navbar #title:hover {
+    cursor: pointer; }
+  #navbar a, #navbar a:hover, #navbar a:active, #navbar a:visited, #navbar a:link {
+    text-decoration: none;
+    color: inherit; }
+
+#index_page #content {
+  padding: 0px 20px 0px 20px; }
+  #index_page #content .product {
+    text-align: center; }
+    #index_page #content .product .show img {
+      width: 300px;
+      height: 400px;
+      box-shadow: #161616 7px 9px 7px; }
+    #index_page #content .product .name {
+      padding: 2vw 0vw 0vw 0vw;
+      font-weight: 700;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis; }
+    #index_page #content .product .amount {
+      padding: 2vw 0vw 1.5vw 0vw;
+      font-weight: 900; }
+    #index_page #content .product .button {
+      padding: 0vw 0vw 0vw 0vw;
+      border: solid 0.15vw;
+      border-radius: 1vw;
+      width: 15vw;
+      margin: auto; }
+    #index_page #content .product .button:hover {
+      background-color: #D5D5D5;
+      cursor: pointer; }
+
+#cart_page #cart {
+  padding: 0px 20px 0px 20px; }
+  #cart_page #cart #product_title {
+    font-size: large; }
+  #cart_page #cart #product_list {
+    font-size: larger;
+    overflow-y: scroll;
+    height: 40vw; }
+    #cart_page #cart #product_list .product {
+      line-height: 3.8vw;
+      padding: 1vw 0vw 1vw 0vw;
+      background-color: #D5D5D5;
+      margin: 1vw 0vw 0vw 0vw;
+      border-radius: 1vw; }
+      #cart_page #cart #product_list .product .product_img img {
+        width: 50px;
+        height: 50px; }
+      #cart_page #cart #product_list .product .product_name {
+        font-weight: 700;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
+      #cart_page #cart #product_list .product .product_amount {
+        font-weight: 900; }
+      #cart_page #cart #product_list .product .product_delete {
+        text-align: right; }
+  #cart_page #cart #payment_info {
+    background-color: #D5D5D5; }
+    #cart_page #cart #payment_info .form_input {
+      margin: 1vw 0vw 0vw 0vw; }
+    #cart_page #cart #payment_info #card_payment a {
+      width: 100%; }
+    #cart_page #cart #payment_info #card_show {
+      text-align: center;
+      margin: 2vw 0vw 2vw 0vw; }
+      #cart_page #cart #payment_info #card_show img {
+        width: 320px;
+        height: 240px; }
+
+#sign_page #sign_area {
+  padding: 0px 20px 0px 20px; }
+  #sign_page #sign_area #sign_title {
+    font-size: large; }
+  #sign_page #sign_area #sign_in {
+    height: 18vw;
+    background-color: #D5D5D5; }
+    #sign_page #sign_area #sign_in .form_input {
+      margin: 1vw 0vw 1vw 0vw; }
+    #sign_page #sign_area #sign_in #sign_in_action #sign_in_action_button {
+      width: 100%; }
+  #sign_page #sign_area #sign_up {
+    height: 18vw;
+    background-color: #D5D5D5; }
+    #sign_page #sign_area #sign_up .form_input {
+      margin: 1vw 0vw 1vw 0vw; }
+    #sign_page #sign_area #sign_up #sign_up_action #sign_up_action_button {
+      width: 100%; }
+
+#product_page #content {
+  padding: 0px 20px 0px 20px; }
+  #product_page #content #product_title {
+    font-size: large; }
+  #product_page #content .product {
+    text-align: center;
+    padding: 1vw 0vw 1vw 0vw; }
+    #product_page #content .product .show img {
+      width: 300px;
+      height: 400px;
+      box-shadow: #161616 7px 9px 7px; }
+    #product_page #content .product .name {
+      padding: 2vw 0vw 0vw 0vw;
+      font-weight: 700;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis; }
+    #product_page #content .product .amount {
+      padding: 2vw 0vw 1.5vw 0vw;
+      font-weight: 900; }
+    #product_page #content .product .button {
+      padding: 0vw 0vw 0vw 0vw;
+      border: solid 0.15vw;
+      border-radius: 1vw;
+      width: 15vw;
+      margin: auto; }
+    #product_page #content .product .button:hover {
+      background-color: #D5D5D5;
+      cursor: pointer; }
+
+/*# sourceMappingURL=user.css.map */

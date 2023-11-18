@@ -1,0 +1,8 @@
+T:Telefon
+A:(0216) 610 02 03
+
+T:GSM
+A:(0538) 610 07 12
+
+T:E-Posta
+A:alhn.gzl@gmail.com

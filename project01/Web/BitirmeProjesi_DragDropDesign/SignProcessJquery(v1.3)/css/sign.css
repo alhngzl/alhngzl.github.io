@@ -1,0 +1,151 @@
+body, html {
+	height: 100%;
+	background-color: #414141;
+	overflow: hidden;
+}
+
+#centerArea {
+	font-family: helvetica;
+	background-repeat: no-repeat;
+	width: 1366px;
+	height: 768px;
+	background-color: #414141;
+	position: fixed;
+	left: 50%;
+	margin-left: -683px;
+	top: 50%;
+	margin-top: -384px;
+}
+
+#panelSelectSessionType {
+	background-color: #414141;
+	height: 100%;
+	width: 820px;
+	float: left;
+	color: #fff;
+}
+
+#panelSelectSessionType>img {
+	width: 175px;
+	margin-left: 735px;
+	margin-top: 49px;
+	background: #414141;
+	border-radius: 50%;
+	position: fixed;
+	z-index: 99;
+}
+
+#panelSelectSessionType #welcome {
+	margin-top: 265px;
+	font-size: 43px;
+	margin-left: 86px;
+}
+
+#panelSelectSessionType #content {
+	margin-top: 22px;
+	font-size: 21px;
+	margin-left: 86px;
+	font-weight: bold;
+}
+
+#panelSelectSessionType .signButton {
+	-webkit-user-select: none;
+	cursor: pointer;
+	width: 109px;
+	background: linear-gradient(#f4be1b, #c3981b);
+	margin-left: 86px;
+	margin-top: 14px;
+	height: 44px;
+	color: #414141;
+	line-height: 44px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 16px;
+	float: left;
+}
+
+#panelSelectSessionType a {
+	text-decoration: none;
+	color: #f4be1b;
+	float: left;
+	margin-left: 30px;
+	margin-top: 23px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.panelSelected {
+	background: linear-gradient(#f4be1b, #c3981b);
+	height: 630px;
+	width: 526px;
+	float: left;
+	margin-top: 71px;
+}
+
+.panelSelected #joinUs {
+	margin-top: 155px;
+	color: #414141;
+	margin-left: 84px;
+	font-size: 32px;
+}
+
+.panelSelected .inputGroup {
+	margin-left: 84px;
+	margin-top: 25px;
+	font-weight: bold;
+	height: 30px;
+	border-bottom: solid 4px #414141;
+	width: 375px;
+	line-height: 30px;
+}
+
+.panelSelected .inputGroup p {
+	float: left;
+	width: 50px;
+}
+
+.panelSelected .inputGroup input {
+	clear: both;
+	background-color: transparent;
+	border: none;
+	color: #414141;
+	padding-left: 20px;
+	outline: none;
+}
+
+.panelSelected .inputGroup span.ok {
+	color: #2ad12a;
+}
+
+.panelSelected .inputGroup span.remove {
+	color: #ff0000;
+}
+
+.panelSelected .signButton {
+	-webkit-user-select: none;
+	float: left;
+	clear: both;
+	cursor: pointer;
+	width: 380px;
+	background: #414141;
+	margin-left: 84px;
+	margin-top: 14px;
+	height: 44px;
+	color: #fff;
+	line-height: 44px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.panelSelected a {
+	float: left;
+	text-decoration: none;
+	color: #414141;
+	margin-top: 23px;
+	margin-left: 84px;
+	font-weight: bold;
+	font-size: 14px;
+	width: 380px;
+	text-align: center;
+}

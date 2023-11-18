@@ -1,0 +1,15 @@
+1->	 Go to phpMyAdmin
+
+2->	 Click [New] on left panel
+
+3->	 Set anything DB Name
+
+4->	 Select charset Latin5TurkishCi
+
+5->	 [Create]
+
+6->	 Click [Import] on top panel
+
+7->	 Select file [Project06.sql]
+
+8->	 Change DB Name on db_connecter.php file.

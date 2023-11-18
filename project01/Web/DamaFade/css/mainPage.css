@@ -1,0 +1,72 @@
+html,body{
+	width: 100% !important;
+	height: 100% !important;
+	margin: 0 !important;
+	overflow: hidden !important;
+	font-family: helvetica !important;
+	background-color: #E0E4CC !important;
+}
+.main{
+	width: 100%;
+	background-color: #E0E4CC;
+	height: 100%;
+	border: solid #F38630 2px;
+	position: fixed;
+}
+#list_info{
+	width: 85%;
+}
+#urun_button, #kullanici_button, #satis_button{
+	cursor: pointer;
+}
+.urun_button, .kullanici_button, .satis_button, .list_button{
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	box-shadow: 5px 5px 5px #69D2E7;
+	background-color: #337ab7;
+	height: 31%;
+	width: 23.5%;
+	border-radius: 15px;
+	margin-left: 7%;
+	margin-top: 5%;
+	float: left;
+	font-size: xx-large;
+	color: white;
+	line-height: 300px;
+	text-align: center;
+	cursor: pointer;
+}
+#geri, #urun_info, #kullanici_info, #satis_info{
+	width: 85%;		
+	height: 100px;
+}
+#urun_info, #kullanici_info, #satis_info, #list_info{
+	cursor: auto;
+}
+
+#attr_page{
+	opacity: 0;
+	padding: 1%;
+	border-radius: 30px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	width: 0%;
+	height: 0%;
+	left: 50%;
+	top: 50%;
+}
+#exit{
+	width: 20px;
+	position: absolute;
+	right: 1%;
+	border: solid #F38630 2px;
+	border-radius: 50%;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	font-weight: bold;
+	font-family: cursive;
+	cursor: pointer;
+}

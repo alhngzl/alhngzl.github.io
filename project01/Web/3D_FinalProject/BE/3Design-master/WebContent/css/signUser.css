@@ -1,0 +1,67 @@
+#sign {
+  font-family: helvetica;
+  width: 420px;
+  /*height: 425px;*/
+  background-color: white;
+  left: 50%;
+  top: 50%;
+  margin-left: -210px;
+  margin-top: -212px;
+  margin-bottom: 30px;
+  position: absolute;
+  border-radius: 3px; }
+
+#sign #sign_in {
+  border-top: solid 5px #d66075; }
+#sign #sign_up {
+  background-color: #f4f4f4;
+  border-top: solid 5px transparent; }
+#sign .col-md-6 {
+  cursor: pointer;
+  color: #5e5e5e;
+  text-align: center;
+  font-size: larger;
+  line-height: 45px; }
+#sign .col-md-6:hover {
+  background-color: #e8e8e8; }
+#sign .col-md-12 {
+  padding: 38px;
+  color: #5e5e5e;
+  font-weight: bold; }
+#sign .sign_in_form_group, #sign .sign_up_form_group {
+  background-color: #f4f4f4;
+  border: solid 1px #e5e5e5;
+  margin-left: 2px;
+  height: 40px;
+  margin-top: 9px;
+  width: 340px;
+  border-radius: 10px;
+  margin-bottom: 26px; }
+#sign .sign_in_form_group i, #sign .sign_up_form_group i {
+  margin-left: 10px;
+  color: #5e5e5e;
+  font-size: initial;
+  margin-top: 11px; }
+#sign .sign_in_form_group input, #sign .sign_up_form_group input {
+  width: 300px;
+  font-size: large;
+  padding-left: 5px; }
+#sign #sign_in_button, #sign #sign_up_button {
+  cursor: pointer;
+  margin: auto;
+  background: #d65f75;
+  width: 160px;
+  margin-top: 20px;
+  height: 52px;
+  border-bottom: solid 4px #bf4760;
+  text-align: center;
+  font-size: larger;
+  line-height: 55px;
+  color: #ffffff;
+  border-radius: 3px; }
+#sign #sign_in_status, #sign #sign_up_status {
+  display: none;
+  width: 100%;
+  text-align: center; }
+
+/*# sourceMappingURL=signUser.css.map */

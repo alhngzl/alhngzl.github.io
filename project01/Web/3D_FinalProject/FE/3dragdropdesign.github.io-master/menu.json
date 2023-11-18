@@ -1,0 +1,72 @@
+﻿[
+	{
+		"id":1,
+		"name":"aksesuar",
+		"no":["1.stl", "2.stl", "3.stl"],
+		"img":["1.png", "2.png", "3.png"],
+		"icon":"asterisk"
+	},
+	{
+		"id":2,
+		"name":"banyo",
+		"no":["1.stl", "2.stl"],
+		"img":["1.png", "2.png"],
+		"icon":"tint"
+	},
+	{
+		"id":3,
+		"name":"dostlarımız",
+		"no":["1.stl", "2.stl", "3.stl"],
+		"img":["1.png", "2.png", "3.png"],
+		"icon":"leaf"
+	},
+	{
+		"id":4,
+		"name":"mutfak",
+		"no":["1.stl", "2.stl", "3.stl"],
+		"img":["1.png", "2.png", "3.png"],
+		"icon":"cutlery"
+	},
+	{
+		"id":5,
+		"name":"oturma odası",
+		"no":["1.stl", "2.stl", "3.stl", "4.stl", "5.stl"],
+		"img":["1.png", "2.png", "3.png", "4.png", "5.png"],
+		"icon":"lamp"
+	},
+	{
+		"id":6,
+		"name":"spor",
+		"no":["1.stl", "2.stl", "3.stl"],
+		"img":["1.png", "2.png", "3.png"],
+		"icon":"apple"
+	},
+	{
+		"id":7,
+		"name":"teknoloji",
+		"no":["1.stl", "2.stl"],
+		"img":["1.png", "2.png"],
+		"icon":"sound-dolby"
+	},
+	{
+		"id":8,
+		"name":"yapı",
+		"no":["1.stl", "2.stl", "3.stl", "4.stl"],
+		"img":["1.png", "2.png", "3.png", "4.png"],
+		"icon":"wrench"
+	},
+	{
+		"id":9,
+		"name":"yatak odası",
+		"no":["1.stl", "2.stl", "3.stl", "4.stl"],
+		"img":["1.png", "2.png", "3.png", "4.png"],
+		"icon":"heart"
+	},
+	{
+		"id":10,
+		"name":"çalışma odası",
+		"no":["1.stl", "2.stl"],
+		"img":["1.png", "2.png"],
+		"icon":"pencil"
+	}
+]

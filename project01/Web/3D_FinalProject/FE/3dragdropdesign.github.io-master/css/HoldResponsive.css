@@ -1,0 +1,182 @@
+*{
+	-webkit-user-select: none;
+}
+
+body, html{
+	width: 100%;
+	height: 100%;
+	background-color: #bfd1e5;
+	overflow: hidden;
+	font-family: helvetica;
+}
+
+.waiting{
+	display: block;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: #414141;
+	top: 0;
+	left: 0;
+	z-index: 999;
+}
+
+.waiting img{
+	width: 500px;
+	position: absolute;
+	top: 2%;
+	margin-left: -250px;
+	left: 50%;
+}
+
+#holdReponsive #globalArea{
+	width: 1366px;
+	height: 100%;
+	background-color: #414141
+	margin: auto;
+}
+#holdReponsive #menuBar{
+	width: 250px;
+	height: 100%;
+	background-color: #414141;
+	overflow-x: hidden;
+	overflow-y: auto;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	z-index: 99;
+	position: fixed;
+	left: 0;
+}
+#holdReponsive .menuPart{
+	cursor: pointer;
+	background-color: #414141;
+	color: #fff;
+	width: 308px;
+	height: 42px;
+	/*opacity: 0.5;*/
+	line-height: 42px;
+	font-size: 9px;
+	text-transform: uppercase;		
+	font-weight: bold;
+	padding-left: 22px;
+}
+#holdReponsive .menuPart span{
+	margin: 0px 0px 0px 224px;
+	font-size: 13px;
+}
+#holdReponsive .subMenuA{
+	cursor: pointer;
+	font-weight: bold;
+	background: linear-gradient(#f4be1b, #c3981b);
+	height: 43px;
+	width: 250px;
+	/*opacity: 0.5;*/
+	text-transform: uppercase;
+	line-height: 43px;
+	padding-left: 21px;
+	font-size: 10px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	-webkit-user-select: none;
+}
+#holdReponsive .subMenuA span{
+	float: left;
+	margin-right: 6px;
+	font-size: 15px;
+	height: 43px;
+	line-height: 43px;
+}
+#holdReponsive .subMenuA p{
+	float: left;
+	width: 180px;
+	height: 43px;
+	margin: 0;
+	line-height: 43px;
+}
+#holdReponsive .subMenuB{
+	transition: all linear 125ms;
+	cursor: pointer;
+	background-color: #414141;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 75px;
+	height: 75px;
+	margin: 1px;
+	line-height: 34.4px;
+	overflow: hidden;
+	float: left;
+}
+#holdReponsive .subMenuB.ng-hide {
+	height: 0px;
+	width: 0px;
+}
+#holdReponsive .subMenuB img{
+	width: 75px;
+}
+#holdReponsive #menuBar > img{
+	width: 200px;
+	left: 50%;
+	position: relative;
+	margin: 20px 0px 20px -100px;
+}
+#holdReponsive #designArea{
+	position: fixed;
+	top: 0;
+	z-index: 9;
+	margin-left: 100px;
+	width: 1115px;
+}
+
+#holdReponsive #furnitureOptions{
+	width: 60px;
+	height: 700px;
+	position: fixed;
+	right: 0;
+	top: -580px;
+	background-color: #414141;
+	z-index: 99;
+	border-bottom-left-radius: 5px;
+}
+#holdReponsive #furnitureOptions #selectedFurnitureImg{
+	width: 50px;
+	height: 50px;
+	background: linear-gradient(#f4be1b, #c3981b);
+	float: left;
+	margin-left: 5px;
+	margin-right: 20px;
+	border-radius: 10%;
+	position: relative;
+	/*top: 50%;*/
+	margin-top: 5px;	
+
+}
+#holdReponsive #furnitureOptions .positionSelector{
+	width: 50px;
+	height: 50px;
+	background: linear-gradient(#f4be1b, #c3981b);
+	/*float: left;*/
+	margin-left: 5px;
+	border-radius: 5px;
+	position: relative;
+	/*top: 50%;*/
+	margin-top: 5px;
+	cursor: pointer;
+}
+#holdReponsive #furnitureOptions img{
+	width: 50px;
+	border-radius: 5px;
+}
+#holdReponsive #furnitureOptions #colorSelector{
+	margin-top: 60px;
+}
+#holdReponsive #furnitureOptions #save{
+	bottom: 0;
+	position: absolute;
+	margin-bottom: 10px;
+}
+#holdReponsive #furnitureOptions #resetCamera{
+	bottom: 55px;
+	position: absolute;
+	margin-bottom: 10px;
+}

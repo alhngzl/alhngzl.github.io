@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<script type="text/javascript" src="js/three.js"></script>
+	<script type="text/javascript" src="js/ammo.js"></script>
+	<script type="text/javascript" src="js/OrbitControls.js"></script>
+	<script type="text/javascript" src="js/TGALoader.js"></script>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/STLLoader.js"></script>
+	<script type="text/javascript" src="js/DragControls.js"></script>
+	<title></title>
+</head>
+<body>
+	<div id="container"></div>
+	<div class="global_area_top">
+		Ali Han Güzel <br />
+		alhn.gzl@gmail.com
+	</div>
+	<div class="global_area_left">
+		<div class="itemExtras" id="D2"></div>
+		<div class="itemExtras" id="save"></div>
+
+		<div class="itemFurniture" id="_1"></div>
+		<div class="itemFurniture" id="_2"></div>
+		<div class="itemFurniture" id="_3"></div>
+		<div class="itemFurniture" id="_4"></div>
+		<div class="itemFurniture" id="_5"></div>
+		<div class="itemFurniture" id="_6"></div>
+		<div class="itemFurniture" id="_7"></div>
+		<div class="itemFurniture" id="_8"></div>
+		<div class="itemFurniture" id="_9"></div>
+		<div class="itemFurniture" id="_10"></div>
+		<div class="itemFurniture" id="_11"></div>
+		<div class="itemFurniture" id="_12"></div>
+	</div>
+	<div class="global_area_hide">
+		<input class="itemHide" id="furnitureColor" type="color" />
+	</div>
+</body>
+</html>
+<style type="text/css">
+	body, .cotainer{
+		overflow: hidden;
+		background-color: #282828;
+		background-repeat: no-repeat;
+	}
+	#D2{
+		background-image: url("img/2d.jpg");
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+	#save{
+		background-image: url("img/download.jpg");
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+	.global_area_top{
+		text-align: center;
+		line-height: 36px;
+		color: #ffffff;
+		font-family: helvetica;
+		position: fixed;
+		width: 255px;
+		height: 72px;
+		background-color: #00a8b3;
+		top: 0;
+		margin-left: 0px;
+	}
+	.global_area_left{
+		position: fixed;
+		width: 255px;
+		height: 500px;
+		background-color: #f4f4f4;
+		left: 0;
+		top: 0;
+		margin-top: 72px;
+		overflow-y: auto;
+		overflow-x: hidden;
+		z-index: 99;
+		margin-left: 8px;
+	}
+	.global_area_right{
+		position: fixed;
+		width: 200px;
+		height: 500px;
+		background-color: #f4f4f4;
+		right: 0;
+		top: 50%;
+		margin-top: -250px;
+		border: solid 1px #d66075;
+		border-top-left-radius: 10px;
+		border-bottom-left-radius: 10px;
+	}
+	.global_area_hide{
+		position: fixed;
+		width: 255px;
+		height: 100px;
+		top: 0;
+		left: 0;
+		background-color: #f4f4f4;
+		margin-top: 572px;
+		margin-left: 8px;
+		z-index: 0;
+	}
+	.global_area_hide #furnitureColor{
+		width: 100%;
+		height: 100%;
+		background-color: transparent;
+		border: none;
+		padding: 10px;
+		border-radius: 32px;
+		cursor: pointer;
+	}
+	.itemFurniture, .itemExtras{
+		text-align: center;
+		line-height: 50px;
+		font-family: helvetica;
+		font-size: 15px;
+		cursor: pointer;
+		float: left;
+		width: 50px;
+		height: 50px;
+		margin: 5px;
+		background-color: #ffffff;
+		border: solid 1px #e5e5e5;
+		border-radius: 10px;
+	}
+	.global_area_left #_1{
+		background-image: url("furniture/1/corner.png");
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	.global_area_left #_2{
+		background-image: url("furniture/2/corner2.png");
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	.global_area_left #_3{
+		background-image: url("furniture/3/bigsofa.png");
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	.global_area_left #_4{
+		background-image: url("furniture/4/table.png");
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	.global_area_left #_5{
+		background-image: url("furniture/5/lamp.png");
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	.global_area_left #_6{
+		background-image: url("furniture/6/arm.png");
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	.global_area_left #_7{
+		background-image: url("furniture/7/bed.png");
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	.global_area_left #_8{
+		background-image: url("furniture/8/bed2.png");
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	.global_area_left #_9{
+		background-image: url("furniture/9/bed3.png");
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	.global_area_left #_10{
+		background-image: url("furniture/10/tv.png");
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	.global_area_left #_11{
+		background-image: url("furniture/11/rubbish.png");
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	.global_area_left #_12{
+		background-image: url("furniture/12/cat.png");
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+</style>
+
+<script type="text/javascript">
+	var furnituresSelectObject = [];
+
+	var container;
+	var camera;
+	var controls;
+	var renderer;
+	var collisionConfiguration;
+	var dispatcher;
+	var broadphase;
+	var solver;
+	var physicsWorld;
+	var scene;
+	var light;
+
+	var clock = new THREE.Clock();
+	var pos = new THREE.Vector3();
+	var quat = new THREE.Quaternion();
+	var textureLoader = new THREE.TextureLoader();
+	var softBodies = [];
+	var gravityConstant = -9.8;
+	var margin = 0.05;
+	var objects = [];
+
+	initGraphics();
+	initPhysics();
+	createObjects();
+
+	animate();
+
+	function initGraphics(){
+		container = document.getElementById("container");
+
+		//CAMERA
+		camera =new THREE.PerspectiveCamera(60, window.innerWidth/window.innerHeight, 0.2, 2000);
+		camera.position.x = 0.03;
+		camera.position.y = 28.15;
+		camera.position.z = 33.67;
+
+		controls = new THREE.OrbitControls(camera);
+		controls.target.y = 2;
+
+		renderer = new THREE.WebGLRenderer();
+		renderer.setClearColor(0x41cac0);
+		renderer.setPixelRatio(window.devicePixelRatio);
+		renderer.setSize(window.innerWidth,window.innerHeight);
+		renderer.shadowMap.enabled =  true;
+
+		//LIGHT
+		var ambientLight = new THREE.AmbientLight(0x404040);
+		light = new THREE.DirectionalLight(0xffffff, 1);
+		light.position.set(-25, 20, 5);
+		light.castShadow = true;
+
+		var d = 20;
+		light.shadow.camera.left = -d;
+		light.shadow.camera.right = d;
+		light.shadow.camera.top = d;
+		light.shadow.camera.bottom = -d;
+
+		light.shadow.camera.near = 2;
+		light.shadow.camera.far = 50;
+
+		light.shadow.mapSize.x = 1024;
+		light.shadow.mapSize.y = 1024;
+
+		scene = new THREE.Scene();
+		scene.add(ambientLight);
+		scene.add(light);
+
+		var dragControls = new THREE.DragControls( objects, camera, renderer.domElement, scene );
+		dragControls.addEventListener( 'dragstart', function ( event ) { controls.enabled = false; } );
+		dragControls.addEventListener( 'dragend', function ( event ) { controls.enabled = true; } );		
+
+		container.innerHTML = "";
+		container.appendChild(renderer.domElement);
+	}
+
+	function initPhysics(){
+		collisionConfiguration = new Ammo.btSoftBodyRigidBodyCollisionConfiguration();
+		dispatcher = new Ammo.btCollisionDispatcher( collisionConfiguration );
+		broadphase = new Ammo.btDbvtBroadphase();
+		solver = new Ammo.btSequentialImpulseConstraintSolver();
+		softBodySolver = new Ammo.btDefaultSoftBodySolver();
+		physicsWorld = new Ammo.btSoftRigidDynamicsWorld( dispatcher, broadphase, solver, collisionConfiguration, softBodySolver);
+		physicsWorld.setGravity( new Ammo.btVector3( 0, gravityConstant, 0 ) );
+		physicsWorld.getWorldInfo().set_m_gravity( new Ammo.btVector3( 0, gravityConstant, 0 ) );
+	}
+	function animate(){
+		requestAnimationFrame(animate);
+		render();
+	}
+	function render(){
+		var deltaTime = clock.getDelta();
+		controls.update(deltaTime);
+		renderer.render(scene, camera);
+	}
+	function createObjects(){
+		pos.set(0, -0.5, 0);
+		quat.set(0, 0, 0, 1);
+		var ground = createParalellepiped(40, 0.05, 40, 0, pos, quat, new THREE.MeshPhongMaterial( { color: 0xFFFFFF } ));
+		ground.castShadow = true;
+		ground.receiveShadow = true;
+		textureLoader.load("img/grid.png", function(texture){
+			texture.wrapS = THREE.RepeatWrapping;
+			texture.wrapT = THREE.RepeatWrapping;
+			texture.repeat.set(40, 40);
+			ground.material.map = texture;
+			ground.material.needsUpdate = true;
+		});
+	}
+	function createParalellepiped(sx, sy, sz, mass, pos, quat, material){
+		var threeObject = new THREE.Mesh(new THREE.BoxGeometry(sx, sy, sz, 1, 1, 1), material);
+		var shape = new Ammo.btBoxShape(new Ammo.btVector3(sx*0.5, sy*0.5, sz*0.5));
+		shape.setMargin(margin);
+		createRigiBody(threeObject, shape, mass, pos, quat);
+		return threeObject;
+	}
+	function createRigiBody(threeObject, shape, mass, poss, quat){
+		threeObject.position.copy(pos);
+		threeObject.position.copy(quat);
+
+		var transform = new Ammo.btTransform();
+		transform.setIdentity();
+		transform.setOrigin( new Ammo.btVector3( pos.x, pos.y, pos.z ) );
+		transform.setRotation( new Ammo.btQuaternion( quat.x, quat.y, quat.z, quat.w ) );
+		var motionState = new Ammo.btDefaultMotionState( transform );
+		var localInertia = new Ammo.btVector3( 0, 0, 0 );
+		shape.calculateLocalInertia( mass, localInertia );
+		var rbInfo = new Ammo.btRigidBodyConstructionInfo( mass, motionState, shape, localInertia );
+		var body = new Ammo.btRigidBody( rbInfo );
+		threeObject.userData.physicsBody = body;
+		scene.add( threeObject );
+		if ( mass > 0 ) {
+			rigidBodies.push( threeObject );
+			// Disable deactivation
+			body.setActivationState( 4 );
+		}
+		physicsWorld.addRigidBody( body );
+	}
+	function birdShow(){
+		camera.rotation.x = -1.5707953166060573;
+		camera.rotation.y = 3.8878877894887864;
+		camera.rotation.z = 3.1377049270666326;
+		camera.position.x = 1.5269309892413967;
+		camera.position.y = 41.27403382470975;
+		camera.position.z = -0.00003927548271329872;
+	}
+
+	function createCube(positionX, positionZ){
+		var loader = new THREE.TGALoader();
+		var texture1 = loader.load( 'img/tga/texture1.tga' );
+		var texture2 = loader.load( 'img/tga/texture2.tga' );
+		var texture3 = loader.load( 'img/tga/texture3.tga' );
+		var texture4 = loader.load( 'img/tga/texture4.tga' );
+		var texture5 = loader.load( 'img/tga/texture5.tga' );
+		var texture6 = loader.load( 'img/tga/texture6.tga' );
+
+		var material1 = new THREE.MeshPhongMaterial( { color: 0xffffff, map: texture1, transparent: true} );
+		var material2 = new THREE.MeshPhongMaterial( { color: 0xffffff, map: texture2, transparent: true} );
+		var material3 = new THREE.MeshPhongMaterial( { color: 0xffffff, map: texture3, transparent: true} );
+		var material4 = new THREE.MeshPhongMaterial( { color: 0xffffff, map: texture4, transparent: true} );
+		var material5 = new THREE.MeshPhongMaterial( { color: 0xffffff, map: texture5, transparent: true} );
+		var material6 = new THREE.MeshPhongMaterial( { color: 0xffffff, map: texture6, transparent: true} );
+
+		var materials = [material1, material2, material3, material4, material5, material6];
+		var meshFaceMaterial = new THREE.MeshFaceMaterial( materials );
+
+		var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+		var mesh1 = new THREE.Mesh( geometry, meshFaceMaterial );
+
+		mesh1.scale.x = 2;
+		mesh1.scale.y = 2;
+		mesh1.scale.z = 2;
+		mesh1.position.x = positionX;
+		mesh1.position.y = mesh1.scale.y/2;
+		mesh1.position.z = positionZ;
+		scene.add(mesh1);
+		render();
+	}
+	function cretae3MFFurniture(MFPath, MFColor, MFSize, MFPositionX, MFPositionY, MFPositionZ){
+		var loader = new THREE.STLLoader();
+		loader.load( MFPath, function (geometry) {
+			var material = new THREE.MeshPhongMaterial({color: MFColor, specular: 0x111111, shininess: 200});
+			var mesh = new THREE.Mesh(geometry, material);
+			mesh.position.set(MFPositionX, MFPositionY, MFPositionZ);
+			mesh.rotation.set(-1.57, 0, 0);
+			mesh.scale.set(MFSize, MFSize, MFSize);
+			mesh.castShadow = true;
+			mesh.receiveShadow = true;
+			furnituresSelectObject.push(mesh);
+			objects.push(mesh);
+			scene.add(mesh);
+		} );
+	}
+	function rotationUpdate(){
+		var last = furnituresObject[0];
+		last.rotation.x = last.rotation.x + 10;
+	}
+
+	$("#2D").click(function(){
+		birdShow();
+	});
+	$(".itemFurniture").click(function(){
+		var furnitureColor = $("#furnitureColor").val();
+		var id = $(this).attr("id").substring(1);
+		var furnitureModel = "furnitureModel";
+		cretae3MFFurniture("furniture/"+id+"/"+furnitureModel+".stl", furnitureColor, 0.05, 0, 0, 0);
+	});
+/*
+
+
+	$("#_1").click(function(){
+		cretae3MFFurniture("furniture/1/corner.stl", 0xffffff, 0.05, 0, 0, 0);
+	});
+	$("#_2").click(function(){
+		cretae3MFFurniture("furniture/2/corner2.stl", 0xffffff, 0.05, 0, 0, 0);
+	});
+	$("#_3").click(function(){
+		cretae3MFFurniture("furniture/3/bigsofa.stl", 0xffffff, 0.05, 0, 0, 0);
+	});
+	$("#_4").click(function(){
+		cretae3MFFurniture("furniture/4/table.stl", 0xffffff, 0.05, 0, 0, 0);
+	});
+	$("#_5").click(function(){
+		cretae3MFFurniture("furniture/5/lamp.stl", 0xffffff, 0.05, 0, 0, 0);
+	});
+	$("#_6").click(function(){
+		cretae3MFFurniture("furniture/6/arm.stl", 0xffffff, 0.05, 0, 0, 0);
+	});
+	$("#_7").click(function(){
+		cretae3MFFurniture("furniture/7/bed.stl", 0xffffff, 0.05, 0, 0, 0);
+	});
+	$("#_8").click(function(){
+		cretae3MFFurniture("furniture/8/bed2.stl", 0xffffff, 0.05, 0, 0, 0);
+	});
+	$("#_9").click(function(){
+		cretae3MFFurniture("furniture/9/bed3.stl", 0xffffff, 0.05, 0, 0, 0);
+	});
+	$("#_10").click(function(){
+		cretae3MFFurniture("furniture/10/tv.stl", 0xffffff, 0.05, 0, 0, 0);
+	});
+	$("#_11").click(function(){
+		cretae3MFFurniture("furniture/11/rubbish.stl", 0xffffff, 0.05, 0, 0, 0);
+	});
+	$("#_12").click(function(){
+		cretae3MFFurniture("furniture/12/cat.stl", 0xffffff, 0.05, 0, 0, 0);
+	});
+	*/
+
+</script>

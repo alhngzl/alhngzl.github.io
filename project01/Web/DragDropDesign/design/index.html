@@ -1,0 +1,75 @@
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/spectrum.css" />
+	<link rel="stylesheet" type="text/css" href="css/HoldResponsive.css" />
+	<link rel="stylesheet" type="text/css" href="css/user.css" />
+	<link rel="shortcut icon" href="img/fav.png" />
+
+	<link rel="stylesheet" type="text/css" href="fonts/glyphicons-halflings-regular.eot" />
+	<link rel="stylesheet" type="text/css" href="fonts/glyphicons-halflings-regular.svg" />
+	<link rel="stylesheet" type="text/css" href="fonts/glyphicons-halflings-regular.ttf" />
+	<link rel="stylesheet" type="text/css" href="fonts/glyphicons-halflings-regular.woff" />
+	<link rel="stylesheet" type="text/css" href="fonts/glyphicons-halflings-regular.woff2" />
+
+
+	<script type="text/javascript" src="js/angular.js"></script>
+	<script type="text/javascript" src="js/angular-animate.js"></script>	
+	<script type="text/javascript" src="js/user.js"></script>
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/spectrum.js"></script>
+
+	<script type="text/javascript" src="3D/js/three.js"></script>
+	<script type="text/javascript" src="3D/js/ammo.js"></script>
+	<script type="text/javascript" src="3D/js/OrbitControls.js"></script>
+	<script type="text/javascript" src="3D/js/STLLoader.js"></script>
+	<script type="text/javascript" src="3D/js/DragControls.js"></script>
+
+</head>
+<body id="holdReponsive" ng-app="design">
+	<div class="waiting"><img src="img/logo.png" /></div>
+	<div id="globalArea">
+		<div id="menuBar" ng-controller="menuList">
+			<img src="img/logo.png" />
+			<div class="subMenuA"><span class="glyphicon glyphicon-home"> </span> <p>Anasayfa</p></div>
+
+			<div ng-repeat="x in menuListArray">
+				<div class="subMenuA" ng-click="MenuClick(x.name)">
+					<span class="glyphicon glyphicon-{{x.icon}}"> </span> 
+					<p>{{x.name}}</p>
+					<span class="glyphicon glyphicon-menu-down"> </span> 
+				</div>
+				<div class="subMenuB" ng-repeat="y in x.img" ng-hide="selectedMenu!=x.name"><img class="imageFurnitureDrag" src="img/furniture/{{x.name}}/{{y}}" /></div>
+			</div>
+		</div>
+	</div>
+
+	<div id="furnitureOptions">
+		<div id="selectedFurnitureImg"><img src="" /></div>
+		<div class="positionSelector" id="colorSelector"><img src="img/optionFurniture/colorSelector.png" /><input type='text' id="selectionPalette" /></div>
+		<div class="positionSelector" id="leftTurn" onclick="turnLeft()"><img src="img/optionFurniture/leftTurn.png" /></div>
+		<div class="positionSelector" id="rightTurn"  onclick="turnRight()"><img src="img/optionFurniture/rightTurn.png" /></div>
+		<div class="positionSelector" id="upMove" onclick="upMove()"><img src="img/optionFurniture/upMove.png" /></div>
+		<div class="positionSelector" id="downMove" onclick="downMove()"><img src="img/optionFurniture/downMove.png" /></div>
+		<div class="positionSelector" id="big" onclick="big()"><img src="img/optionFurniture/big.png" /></div>
+		<div class="positionSelector" id="small" onclick="small()"><img src="img/optionFurniture/small.png" /></div>
+		<div class="positionSelector" id="delete" onclick="deleteFurniture()"><img src="img/optionFurniture/delete.png" /></div>
+
+		<div class="positionSelector" id="save" onclick="save()"><img src="img/optionFurniture/save.png" /></div>
+		<div class="positionSelector" id="resetCamera" onclick="resetCamera()"><img src="img/optionFurniture/resetCamera.png" /></div>
+	</div>
+
+	<div id="designArea">
+		<div id="container"></div>
+	</div>
+
+</body>
+</html>
+<script type="text/javascript" src="js/furniture.js"></script>
+<script type="text/javascript" src="js/userJquery.js"></script>

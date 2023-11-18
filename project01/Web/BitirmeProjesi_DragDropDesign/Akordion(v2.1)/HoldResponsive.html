@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/spectrum.css">
+	<link rel="stylesheet" type="text/css" href="css/user.css">
+	<link rel="shortcut icon" href="img/fav.png" />
+
+	<link rel="stylesheet" type="text/css" href="fonts/glyphicons-halflings-regular.eot">
+	<link rel="stylesheet" type="text/css" href="fonts/glyphicons-halflings-regular.svg">
+	<link rel="stylesheet" type="text/css" href="fonts/glyphicons-halflings-regular.ttf">
+	<link rel="stylesheet" type="text/css" href="fonts/glyphicons-halflings-regular.woff">
+	<link rel="stylesheet" type="text/css" href="fonts/glyphicons-halflings-regular.woff2">
+
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/spectrum.js"></script>
+	<script type="text/javascript" src="js/user.js"></script>
+
+
+	<link rel="stylesheet" type="text/css" href="css/HoldResponsive.css">
+	<script type="text/javascript" src="js/HoldResponsive.js"></script>
+
+	<script type="text/javascript" src="3D/js/three.js"></script>
+	<script type="text/javascript" src="3D/js/ammo.js"></script>
+	<script type="text/javascript" src="3D/js/OrbitControls.js"></script>
+	<script type="text/javascript" src="3D/js/STLLoader.js"></script>
+	<script type="text/javascript" src="3D/js/DragControls.js"></script>
+
+</head>
+<body id="holdReponsive">
+
+	<div id="globalArea">
+		<div id="menuBar">
+			<div class="menuPart"> Menü <span class="glyphicon glyphicon-th"></span></div>
+			<div class="subMenuA" clicked="false"><span class="glyphicon glyphicon-home"> </span> <p>Anasayfa</p> </span> </div>
+
+			<div class="subMenuA" id="kitchen"><span class="glyphicon glyphicon-cutlery"> </span> <p>Mutfak</p> <span class="glyphicon glyphicon-menu-right"> </span> </div>
+			<div class="subMenuB kitchen" id="1"></div>
+			<div class="subMenuB kitchen" id="2"></div>
+
+			<div class="subMenuA" id="badroom"><span class="glyphicon glyphicon-heart"> </span> <p>Yatak Odası</p> <span class="glyphicon glyphicon-menu-right"> </span> </div>
+			<div class="subMenuB badroom" id="1"></div>
+			<div class="subMenuB badroom" id="2"></div>
+			<div class="subMenuB badroom" id="3"></div>
+
+			<div class="subMenuA" id="livingroom"><span class="glyphicon glyphicon-lamp"> </span> <p>Oturma Odası</p> <span class="glyphicon glyphicon-menu-right"> </span> </div>
+			<div class="subMenuB livingroom" id="1"></div>	
+			<div class="subMenuB livingroom" id="2"></div>	
+			<div class="subMenuB livingroom" id="3"></div>	
+			<div class="subMenuB livingroom" id="4"></div>
+
+			<div class="subMenuA" id="extras"><span class="glyphicon glyphicon-asterisk"> </span> <p>Aksesuar</p> <span class="glyphicon glyphicon-menu-right"> </span> </div>
+			<div class="subMenuB extras" id="1"></div>	
+			<div class="subMenuB extras" id="2"></div>
+
+			<div class="subMenuA" id="friend"><span class="glyphicon glyphicon-leaf"> </span> <p>Dostlarımız</p> <span class="glyphicon glyphicon-menu-right"> </span> </div>
+			<div class="subMenuB friend" id="1"></div>	
+			<div class="subMenuB friend" id="2"></div>	
+			<div class="subMenuB friend" id="3"></div>	
+			<div class="subMenuB friend" id="4"></div>
+
+			<div class="subMenuA" id="build"><span class="glyphicon glyphicon-wrench"> </span> <p>Yapı Malzemeleri</p> <span class="glyphicon glyphicon-menu-right"> </span> </div>
+			<div class="subMenuB build" id="1"></div>
+			<div class="subMenuB build" id="2"></div>
+		</div>
+
+		<div id="colorBoard">
+			<input type='text' id="spectrum" />
+		</div>
+	</div>
+	<div id="designArea">
+		<div id="container"></div>
+
+		<script type="text/javascript">
+			var furnituresSelectObject = [];
+
+			var container;
+			var camera;
+			var controls;
+			var renderer;
+			var collisionConfiguration;
+			var dispatcher;
+			var broadphase;
+			var solver;
+			var physicsWorld;
+			var scene;
+			var light;
+
+			var clock = new THREE.Clock();
+			var pos = new THREE.Vector3();
+			var quat = new THREE.Quaternion();
+			var textureLoader = new THREE.TextureLoader();
+			var softBodies = [];
+			var gravityConstant = -9.8;
+			var margin = 0.05;
+			var objects = [];
+
+			initGraphics();
+			initPhysics();
+			createObjects();
+
+			animate();
+
+			function initGraphics(){
+				container = document.getElementById("container");
+
+				//CAMERA
+				camera =new THREE.PerspectiveCamera(60, window.innerWidth/window.innerHeight, 0.2, 2000);
+				camera.position.x = 0.03;
+				camera.position.y = 28.15;
+				camera.position.z = 33.67;
+
+				controls = new THREE.OrbitControls(camera);
+				controls.target.y = 2;
+
+				renderer = new THREE.WebGLRenderer();
+				renderer.setClearColor(0xbfd1e5);
+				renderer.setPixelRatio(window.devicePixelRatio);
+				renderer.setSize(window.innerWidth, window.innerHeight);
+				renderer.shadowMap.enabled =  true;
+
+				//LIGHT
+				var ambientLight = new THREE.AmbientLight(0x404040);
+				light = new THREE.DirectionalLight(0xffffff, 1);
+				light.position.set(-25, 20, 5);
+				light.castShadow = true;
+
+				var d = 20;
+				light.shadow.camera.left = -d;
+				light.shadow.camera.right = d;
+				light.shadow.camera.top = d;
+				light.shadow.camera.bottom = -d;
+
+				light.shadow.camera.near = 2;
+				light.shadow.camera.far = 50;
+
+				light.shadow.mapSize.x = 1024;
+				light.shadow.mapSize.y = 1024;
+
+				scene = new THREE.Scene();
+				scene.add(ambientLight);
+				scene.add(light);
+
+				var dragControls = new THREE.DragControls( objects, camera, renderer.domElement, scene );
+				dragControls.addEventListener( 'dragstart', function ( event ) { controls.enabled = false; } );
+				dragControls.addEventListener( 'dragend', function ( event ) { controls.enabled = true; } );		
+
+				container.innerHTML = "";
+				container.appendChild(renderer.domElement);
+			}
+
+			function initPhysics(){
+				collisionConfiguration = new Ammo.btSoftBodyRigidBodyCollisionConfiguration();
+				dispatcher = new Ammo.btCollisionDispatcher( collisionConfiguration );
+				broadphase = new Ammo.btDbvtBroadphase();
+				solver = new Ammo.btSequentialImpulseConstraintSolver();
+				softBodySolver = new Ammo.btDefaultSoftBodySolver();
+				physicsWorld = new Ammo.btSoftRigidDynamicsWorld( dispatcher, broadphase, solver, collisionConfiguration, softBodySolver);
+				physicsWorld.setGravity( new Ammo.btVector3( 0, gravityConstant, 0 ) );
+				physicsWorld.getWorldInfo().set_m_gravity( new Ammo.btVector3( 0, gravityConstant, 0 ) );
+			}
+			function animate(){
+				requestAnimationFrame(animate);
+				render();
+			}
+			function render(){
+				var deltaTime = clock.getDelta();
+				controls.update(deltaTime);
+				renderer.render(scene, camera);
+			}
+			function createObjects(){
+				pos.set(0, -0.5, 0);
+				quat.set(0, 0, 0, 1);
+				var ground = createParalellepiped(40, 0.05, 40, 0, pos, quat, new THREE.MeshPhongMaterial( { color: 0xFFFFFF } ));
+				ground.castShadow = true;
+				ground.receiveShadow = true;
+				textureLoader.load("3D/img/grid.png", function(texture){
+					texture.wrapS = THREE.RepeatWrapping;
+					texture.wrapT = THREE.RepeatWrapping;
+					texture.repeat.set(40, 40);
+					ground.material.map = texture;
+					ground.material.needsUpdate = true;
+				});
+			}
+			function createParalellepiped(sx, sy, sz, mass, pos, quat, material){
+				var threeObject = new THREE.Mesh(new THREE.BoxGeometry(sx, sy, sz, 1, 1, 1), material);
+				var shape = new Ammo.btBoxShape(new Ammo.btVector3(sx*0.5, sy*0.5, sz*0.5));
+				shape.setMargin(margin);
+				createRigiBody(threeObject, shape, mass, pos, quat);
+				return threeObject;
+			}
+			function createRigiBody(threeObject, shape, mass, poss, quat){
+				threeObject.position.copy(pos);
+				threeObject.position.copy(quat);
+
+				var transform = new Ammo.btTransform();
+				transform.setIdentity();
+				transform.setOrigin( new Ammo.btVector3( pos.x, pos.y, pos.z ) );
+				transform.setRotation( new Ammo.btQuaternion( quat.x, quat.y, quat.z, quat.w ) );
+				var motionState = new Ammo.btDefaultMotionState( transform );
+				var localInertia = new Ammo.btVector3( 0, 0, 0 );
+				shape.calculateLocalInertia( mass, localInertia );
+				var rbInfo = new Ammo.btRigidBodyConstructionInfo( mass, motionState, shape, localInertia );
+				var body = new Ammo.btRigidBody( rbInfo );
+				threeObject.userData.physicsBody = body;
+				scene.add( threeObject );
+				if ( mass > 0 ) {
+					rigidBodies.push( threeObject );
+					// Disable deactivation
+					body.setActivationState( 4 );
+				}
+				physicsWorld.addRigidBody( body );
+			}
+			function cretae3MFFurniture(MFPath, MFColor, MFSize, MFPositionX, MFPositionY, MFPositionZ){
+				var loader = new THREE.STLLoader();
+				loader.load( MFPath, function (geometry) {
+					var material = new THREE.MeshPhongMaterial({color: MFColor, specular: 0x111111, shininess: 200});
+					var mesh = new THREE.Mesh(geometry, material);
+					mesh.position.set(MFPositionX, MFPositionY, MFPositionZ);
+					mesh.rotation.set(-1.57, 0, 0);
+					mesh.scale.set(MFSize, MFSize, MFSize);
+					mesh.castShadow = true;
+					mesh.receiveShadow = true;
+					furnituresSelectObject.push(mesh);
+					objects.push(mesh);
+					scene.add(mesh);
+				} );
+			}
+
+		</script>
+	</div>
+</body>
+</html>

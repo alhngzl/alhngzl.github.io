@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="css/spectrum.css">
+	<link rel="stylesheet" type="text/css" href="css/user.css">
+	<link rel="stylesheet" type="text/css" href="css/sign.css">
+	<link rel="shortcut icon" href="img/fav.png" />
+
+	<link rel="stylesheet" type="text/css" href="fonts/glyphicons-halflings-regular.eot">
+	<link rel="stylesheet" type="text/css" href="fonts/glyphicons-halflings-regular.svg">
+	<link rel="stylesheet" type="text/css" href="fonts/glyphicons-halflings-regular.ttf">
+	<link rel="stylesheet" type="text/css" href="fonts/glyphicons-halflings-regular.woff">
+	<link rel="stylesheet" type="text/css" href="fonts/glyphicons-halflings-regular.woff2">
+
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>	
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/user.js"></script>
+</head>
+
+<body ng-app="sign">
+
+	<div id="centerArea">
+		<div id="panelSelectSessionType">
+			<img src="img/logo.png">
+			<p id="welcome">Hoşgeldiniz...</p>
+			<p id="content">
+				Hayal ettiğiniz evi burda tasarlayabilrisiniz.
+				<br />
+				İster üye olup ayrıcalıklardan faydalanın.
+				<br />
+				İster misafir olarak bir bakıp çıkın.
+				<br />
+				Zaten üye misiniz harika kaldığınız yerden devam edin.
+			</p>
+			<div class="signButton" id="signIn">Giriş Yap</div>
+			<div class="signButton" id="signUp">Kayıt Ol</div>
+			<a href="#GoCustomer">Misafir Girişi</a>
+		</div>
+		<div class="panelSelected" id="signUp">
+			<p id="joinUs">Aramıza Katıl</p>
+			<form>
+				<div class="inputGroup">
+					<p>İsim:</p>
+					<input type="text"/>
+				</div>
+				<div class="inputGroup">
+					<p>Soyisim:</p>
+					<input type="text"/>
+				</div>
+				<div class="inputGroup">
+					<p id="emailStatus"><span class="glyphicon glyphicon-ok"> </span> E-Posta:</p>
+					<input type="mail" />
+				</div>
+				<div class="inputGroup">
+					<p>Parola:</p>
+					<input type="password" />
+				</div>
+				<div class="signButton">Kayıt Ol</div>
+			</form>
+		</div>
+		<div class="panelSelected" id="signIn">
+			<p id="joinUs">Devam Et</p>
+			<form>
+				<div class="inputGroup">
+					<p><span class="glyphicon glyphicon-ok"> E-Posta:</p>
+					<input type="mail"/>
+				</div>
+				<div class="inputGroup">
+					<p>Parola:</p>
+					<input type="password" />
+				</div>
+				<div class="signButton">Giriş Yap</div>
+				<a href="#ForPass">Şifremi Unuttum</a>
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>
+
+<style>
+</style>
+
+<script type="text/javascript">
+
+
+
+</script>

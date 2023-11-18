@@ -1,0 +1,17 @@
+body {
+	background-color: #282828;
+}
+/*overide*/
+.row {
+	margin: 0px;
+}
+
+input {
+	background: transparent;
+	outline-width: 0;
+	border: none;
+}
+
+a, a:visited {
+	text-decoration: none;
+}

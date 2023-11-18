@@ -1,0 +1,8 @@
+Image can not save to database table.
+
+Solution, image save as  text.
+
+https://www.base64-image.de
+> Drop image
+> Show Code
+> First "copy to clipboard"

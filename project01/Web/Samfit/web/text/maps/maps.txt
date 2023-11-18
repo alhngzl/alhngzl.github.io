@@ -1,0 +1,8 @@
+T:Açık Adres
+A:Mimar Sinan Mahallesi Namık Kemal Caddesi 536. Sokak No:4 Atakum / Samsun
+
+T:Harita Gösterimi
+A:<iframe src="https://www.google.com/maps/embed?pb=!1m0!3m2!1str!2str!4v1491297267755!6m8!1m7!1soHqIxQDpoAKBQeMLDyhO4g!2m2!1d41.33000454188983!2d36.27978514676175!3f145.0210805296368!4f-10.248602894883774!5f0.7820865974627469" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+T:Konum Tarifi
+A:Samsun Mimar Sinan tramvay durağından Bafra istikametine yolun sol tarafından 200 metre yürüyerek ulaþabilirsiniz.

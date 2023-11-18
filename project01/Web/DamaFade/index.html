@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Projeniz Projemizdir</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/mainPage.css" />
+	<link rel="stylesheet" type="text/css" href="css/bt.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/table.css" />
+
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="js/pageDefaults.js"></script>
+	<script type="text/javascript" src="js/fadePage.js"></script>
+	<script type="text/javascript" src="js/table.js"></script>
+
+</head>
+<body>
+
+	<div class="main" id="list">
+		<div class="list_button" id="urun_button">Ürün</div>
+		<div class="list_button" id="kullanici_button">Kullanıcı</div>
+		<div class="list_button" id="satis_button">Satış</div>
+		<div class="list_button" id="list_info">İşlem yapmak istediğiniz kategoriye tıklayınız...</div>
+	</div>
+	<div class="main" id="urun">
+
+		<div class="row">
+			<div class="panel panel-primary filterable">
+				<div class="panel-heading">
+					<h3 class="panel-title">Ürünler</h3>
+					<div class="pull-right">
+						<button class="btn btn-default btn-xs geri">Ana Sayfa</button>&nbsp;<button class="btn btn-default btn-xs btn-filter">Arama</button>
+					</div>
+				</div>
+				<table class="table">
+					<thead>
+						<tr class="filters">
+							<th><input type="text" class="form-control" placeholder="İd" disabled></th>
+							<th><input type="text" class="form-control" placeholder="Ürün Adı" disabled></th>
+							<th><input type="text" class="form-control" placeholder="Ürün Açıklaması" disabled></th>
+							<th><input type="text" class="form-control" placeholder="Ürün Fiyat" disabled></th>
+							<th><input type="text" class="form-control" placeholder="İşlem" disabled id="select_menu"><button class="btn btn-default btn-xs">Sil</button><button class="btn btn-default btn-xs">Güncelle</button></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>Mark</td>
+							<td>Otto</td>
+							<td>@mdo</td>
+							<td><input type="checkbox" value=""></td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>Jacob</td>
+							<td>Thornton</td>
+							<td>@fat</td>
+							<td><input type="checkbox" value=""></td>
+						</tr>
+						<tr>
+							<td><button class="btn btn-default btn-xs">Ekle</button></td>
+							<td><input type="text" class="form-control" placeholder="Ürün Adı"></td>
+							<td><input type="text" class="form-control" placeholder="Ürün Açıklaması"></td>
+							<td><input type="number" class="form-control" step="0.01" placeholder="Ürün Fiyatı"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+	</div>
+	<div class="main" id="kullanici">
+		<div class="row">
+			<div class="panel panel-primary filterable">
+				<div class="panel-heading">
+					<h3 class="panel-title">Ürünler</h3>
+					<div class="pull-right">
+						<button class="btn btn-default btn-xs geri">Ana Sayfa</button>&nbsp;<button class="btn btn-default btn-xs btn-filter">Arama</button>
+					</div>
+				</div>
+				<table class="table">
+					<thead>
+						<tr class="filters">
+							<th><input type="text" class="form-control" placeholder="Parola" disabled></th>
+							<th><input type="text" class="form-control" placeholder="İşlem" disabled id="select_menu"><button class="btn btn-default btn-xs">Sil</button><button class="btn btn-default btn-xs">Güncelle</button></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Mark</td>
+							<td><input type="checkbox" value=""></td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td><input type="checkbox" value=""></td>
+						</tr>
+						<tr>
+							<td><button class="btn btn-default btn-xs">Ekle</button></td>
+							<td><input type="text" class="form-control" placeholder="Parola"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="main" id="satis">
+		<div class="row">
+			<div class="panel panel-primary filterable">
+				<div class="panel-heading">
+					<h3 class="panel-title">Satışlar</h3>
+					<div class="pull-right">
+					<button class="btn btn-default btn-xs geri">Ana Sayfa</button>&nbsp;<button class="btn btn-default btn-xs btn-filter">Arama</button>
+					</div>
+				</div>
+				<table class="table">
+					<thead>
+						<tr class="filters">
+							<th><input type="text" class="form-control" placeholder="Ürün Adı" disabled></th>
+							<th><input type="number" class="form-control" placeholder="Kullanıcı Id" disabled></th>
+							<th><input type="text" class="form-control" placeholder="Satış Tarihi" disabled></th>
+							<th><input type="number" class="form-control" placeholder="Satış Adeti" disabled></th>
+							<th><input type="text" class="form-control" placeholder="İşlem" disabled id="select_menu"><button class="btn btn-default btn-xs">Sil</button><button class="btn btn-default btn-xs">Güncelle</button></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>Mark</td>
+							<td>Otto</td>
+							<td>@mdo</td>
+							<td><input type="checkbox" value=""></td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>Jacob</td>
+							<td>Thornton</td>
+							<td>@fat</td>
+							<td><input type="checkbox" value=""></td>
+						</tr>
+						<tr>
+							<td><button class="btn btn-default btn-xs">Ekle</button></td>
+							<td><input type="text" class="form-control" placeholder="Ürün Adı"></td>
+							<td><input type="number" class="form-control" placeholder="Kullanıcı Id"></td>
+							<td><input type="date" class="form-control" placeholder="Satış Tarihi"></td>
+							<td><input type="number" class="form-control" placeholder="Satış Adeti"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
+
+<style>
+	
+</style>
