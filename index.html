@@ -46,10 +46,9 @@
     }
 
     .c_navbar{
-	    display: none;
+        display: none;
         text-align: center;
         width: 90%;
-        height: auto;
         border: aliceblue 1px solid;
         font-size: 1.5rem;
         color: aliceblue;
@@ -133,8 +132,18 @@
     const renkKoduDizisi = [kırmızıRenkKodu, sarıRenkKodu, maviRenkKodu, siyahRenkKodu];
     const renkMetniDizisi = [kırmızıRenkMetni, sarıRenkMetni, maviRenkMetni, siyahRenkMetni];
 
+    let sonTıklamaZamanı = null;
     document.querySelectorAll('.c_color_box').forEach(tıklananRenkKutusu => {
         tıklananRenkKutusu.addEventListener('click', function(){
+            let tıklananZaman = Date.now();
+            if (sonTıklamaZamanı !== null) {
+                let ikiciTıklamaArasındakiFark = tıklananZaman - sonTıklamaZamanı;
+                if (ikiciTıklamaArasındakiFark > 1000) {
+                    alert("GEÇ KALDINIZ: Skorunuz : " + document.querySelector('.c_navbar h2').textContent);
+                }
+            }
+            sonTıklamaZamanı = Date.now();
+
             let tıklananKutununRengi = window.getComputedStyle(tıklananRenkKutusu).backgroundColor;
             let yazanMetininRengi = window.getComputedStyle(document.querySelector('.c_text_area h1')).color;
             if(tıklananKutununRengi === yazanMetininRengi){
