@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hazırlanıyor</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: black;
+      font-family: Consolas, monospace;
+      color: #00ff88;
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+
+    /* Terminal */
+    .terminal {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 350px;
+      background: rgba(0, 0, 0, 0.75);
+      border: 1px solid #00ff88;
+      box-shadow: 0 0 20px rgba(0,255,136,0.3);
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      z-index: 2;
+    }
+
+    .output {
+      flex: 1;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      font-size: 14px;
+    }
+
+    .input-line {
+      display: flex;
+    }
+
+    .prompt {
+      margin-right: 5px;
+    }
+
+    input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: #00ff88;
+      font-family: inherit;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="space"></canvas>
+
+<div class="terminal">
+  <div class="output" id="output">
+> Sistem başlatılıyor...
+> Hazırlanıyor...
+  </div>
+
+  <div class="input-line">
+    <div class="prompt">></div>
+    <input id="cmd" autofocus />
+  </div>
+</div>
+
+<script>
+// ===== STARFIELD =====
+const canvas = document.getElementById("space");
+const ctx = canvas.getContext("2d");
+
+let w, h;
+function resize() {
+  w = canvas.width = window.innerWidth;
+  h = canvas.height = window.innerHeight;
+}
+window.addEventListener("resize", resize);
+resize();
+
+const stars = [];
+for (let i = 0; i < 300; i++) {
+  stars.push({
+    x: Math.random() * w,
+    y: Math.random() * h,
+    z: Math.random() * w
+  });
+}
+
+let mx = 0, my = 0;
+document.addEventListener("mousemove", (e) => {
+  mx = (e.clientX - w / 2) * 0.0005;
+  my = (e.clientY - h / 2) * 0.0005;
+});
+
+function draw() {
+  ctx.fillStyle = "black";
+  ctx.fillRect(0, 0, w, h);
+
+  for (let s of stars) {
+    s.z -= 2;
+    if (s.z <= 0) {
+      s.x = Math.random() * w;
+      s.y = Math.random() * h;
+      s.z = w;
+    }
+
+    let k = 128 / s.z;
+    let px = (s.x - w / 2) * k + w / 2 + mx * 200;
+    let py = (s.y - h / 2) * k + h / 2 + my * 200;
+
+    let size = (1 - s.z / w) * 2;
+
+    ctx.fillStyle = "white";
+    ctx.beginPath();
+    ctx.arc(px, py, size, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  requestAnimationFrame(draw);
+}
+
+draw();
+
+// ===== TERMINAL INPUT =====
+const input = document.getElementById("cmd");
+const output = document.getElementById("output");
+
+input.addEventListener("keydown", function(e) {
+  if (e.key === "Enter") {
+    const value = input.value;
+    output.textContent += "\n> " + value;
+    input.value = "";
+    output.scrollTop = output.scrollHeight;
+  }
+});
+</script>
+
+</body>
+</html>
